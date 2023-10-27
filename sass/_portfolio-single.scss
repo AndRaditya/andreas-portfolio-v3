@@ -1,0 +1,170 @@
+.portfolio-single {
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 15rem 1fr 15rem;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: var(--color-primary);
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-columns: 10rem 1fr 10rem;
+  }
+
+  @media only screen and (max-width: $bp-mobile) {
+    grid-template-columns: 5rem 1fr 5rem;
+  }
+
+  &--template {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__layout {
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  &__button {
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 999;
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+
+  &__content {
+    grid-area: 1 / 1 / 5 / 5;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(23, 23, 23, 0.95);
+
+    &--wrapper {
+      height: 50%;
+      width: 55%;
+      border: 1px solid var(--color-white);
+      padding: 4.8rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      @media only screen and (max-width: $bp-large) {
+        width: 65%;
+        padding: 4rem;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        width: 75%;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        width: 85%;
+        height: 45%;
+      }
+
+      @media only screen and (max-width: $bp-mobile) {
+        width: 95%;
+        height: 45%;
+      }
+    }
+
+    &--footer {
+      width: 100%;
+      margin-top: 6rem;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5%;
+        width: 50%;
+      }
+
+      &__icon-2 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5%;
+        width: 50%;
+      }
+    }
+  }
+
+  &__image-1 {
+    grid-area: 1 / 1 / 5 / 5;
+
+    @extend .portfolio-single--template;
+    background: url("../assets/kost-catleya.webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__image-2 {
+    grid-area: 1 / 1 / 5 / 5;
+
+    @extend .portfolio-single--template;
+    background: url("../assets/weather.webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__image-3 {
+    grid-area: 1 / 1 / 5 / 5;
+
+    @extend .portfolio-single--template;
+    background: url("../assets/arsip.webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__image-4 {
+    grid-area: 1 / 1 / 5 / 5;
+
+    @extend .portfolio-single--template;
+    background: url("../assets/ajr.webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__image-5 {
+    grid-area: 1 / 1 / 5 / 5;
+
+    @extend .portfolio-single--template;
+    background: url("../assets/wms.webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__icon {
+    width: 20%;
+    height: 20%;
+    filter: grayscale(75%);
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 25%;
+      height: 25%;
+    }
+  }
+}

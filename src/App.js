@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import ParallaxLayout from "./components/ParallaxLayout";
+import PortfolioSinglePage from "./components/PortfolioSinglePage";
 
-function App() {
+import LoadingPage from "./components/LoadingPage";
+import FooterElement from "./components/FooterElement";
+
+export default function App() {
+  const router = createBrowserRouter([
+    { path: "/", element: <MainLayoutWrapper /> },
+    { path: "/dashboard", element: <LayoutWrapperAfterLoading /> },
+    { path: "/portfolio/:portfolioId", element: <PortfolioSinglePage /> },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-wrapper">
+      <RouterProvider router={router} />
     </div>
   );
 }
 
-export default App;
+function MainLayoutWrapper() {
+  return (
+    <div className="main-layout">
+      <LoadingPage />
+      <ParallaxLayout />
+      <FooterElement />
+    </div>
+  );
+}
+
+function LayoutWrapperAfterLoading() {
+  return (
+    <div className="main-layout">
+      <ParallaxLayout />
+      <FooterElement />
+    </div>
+  );
+}

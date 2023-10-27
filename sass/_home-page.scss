@@ -1,0 +1,19 @@
+.home-page {
+  background-color: var(--color-primary);
+  height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 15rem 1fr 15rem;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  &__main {
+    grid-area: 1 / 2 / 2 / 3;
+    // background-image: url("../../public/assets/home-background.webp");
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+  }
+}

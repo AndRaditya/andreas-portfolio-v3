@@ -1,0 +1,343 @@
+.portfolio-page {
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 0rem 1fr 0rem;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  &__layout {
+    grid-area: 1 / 2 / 2 / 3;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: normal;
+    gap: 1%;
+
+    width: 100%;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 2rem;
+    }
+  }
+
+  &__format {
+    width: 100%;
+    // height: 80%;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  &--template-wh {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--template {
+    background-repeat: no-repeat;
+    // width: 100%;
+    // height: 100%;
+    @extend .portfolio-page--template-wh;
+    background-size: cover cover;
+  }
+
+  &--template__layout-wrapper {
+    position: absolute;
+    z-index: 999;
+    @extend .portfolio-page--template-wh;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    padding: 4.8rem;
+    transform: translate(0, 100%);
+    transition: 0.2s ease-in-out;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 3.6rem;
+    }
+  }
+
+  &__1 {
+    position: relative;
+
+    animation: loadingPortfolio 1.8s forwards;
+    animation-delay: 250ms;
+
+    &:hover {
+      height: 85%;
+      filter: none;
+    }
+
+    &--images {
+      z-index: 1;
+      @extend .portfolio-page--template;
+      background: url("../assets/kost-catleya.webp");
+      background-position: 10% 2%;
+
+      position: absolute;
+
+      @media only screen and (max-width: $bp-medium) {
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &--filter {
+      z-index: 999;
+      position: absolute;
+
+      @extend .portfolio-page--template-wh;
+
+      background-color: var(--color-primary);
+      opacity: 0.8;
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover &--filter {
+      opacity: 0.4;
+    }
+
+    &--layout {
+      @extend .portfolio-page--template__layout-wrapper;
+    }
+
+    &:hover &--layout {
+      transform: translate(0, 0);
+    }
+  }
+
+  &__2 {
+    position: relative;
+
+    animation: loadingPortfolio 1.5s forwards;
+    animation-delay: 250ms;
+
+    &:hover {
+      height: 85%;
+    }
+
+    &--images {
+      @extend .portfolio-page--template;
+      background-image: url("../assets/weather.webp");
+      background-position: left left;
+      position: absolute;
+
+      @media only screen and (max-width: $bp-medium) {
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &--filter {
+      z-index: 999;
+      position: absolute;
+
+      @extend .portfolio-page--template-wh;
+
+      background-color: var(--color-primary);
+      opacity: 0.8;
+      transition: 0.2s ease-in-out;
+    }
+
+    &--layout {
+      @extend .portfolio-page--template__layout-wrapper;
+    }
+
+    &:hover &--layout {
+      transform: translate(0, 0);
+    }
+
+    &:hover &--filter {
+      opacity: 0.4;
+    }
+  }
+
+  &__3 {
+    position: relative;
+
+    animation: loadingPortfolio 1.2s forwards;
+    animation-delay: 250ms;
+
+    &:hover {
+      height: 85%;
+    }
+
+    &--images {
+      @extend .portfolio-page--template;
+      background-image: url("../assets/arsip.webp");
+      background-position: 13% 7%;
+      background-size: 400%;
+      position: absolute;
+
+      @media only screen and (max-width: $bp-large) {
+        background-size: cover;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &--filter {
+      @extend .portfolio-page--template-wh;
+      z-index: 999;
+      position: absolute;
+
+      background-color: var(--color-primary);
+      opacity: 0.8;
+      transition: 0.2s ease-in-out;
+    }
+
+    &--layout {
+      @extend .portfolio-page--template__layout-wrapper;
+    }
+
+    &:hover &--layout {
+      transform: translate(0, 0);
+    }
+
+    &:hover &--filter {
+      opacity: 0.4;
+    }
+  }
+
+  &__4 {
+    position: relative;
+
+    animation: loadingPortfolio 0.8s forwards;
+    animation-delay: 250ms;
+
+    &:hover {
+      height: 85%;
+    }
+
+    &--images {
+      @extend .portfolio-page--template;
+      background-image: url("../assets/ajr.webp");
+      background-position: center center;
+      position: absolute;
+
+      @media only screen and (max-width: $bp-medium) {
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &--filter {
+      @extend .portfolio-page--template-wh;
+      z-index: 999;
+      position: absolute;
+
+      background-color: var(--color-primary);
+      opacity: 0.8;
+      transition: 0.2s ease-in-out;
+    }
+
+    &--layout {
+      @extend .portfolio-page--template__layout-wrapper;
+    }
+
+    &:hover &--layout {
+      transform: translate(0, 0);
+    }
+
+    &:hover &--filter {
+      opacity: 0.4;
+    }
+  }
+
+  &__5 {
+    @media only screen and (max-width: $bp-medium) {
+      grid-area: 3 / 1 / 4 / 3;
+    }
+
+    position: relative;
+
+    animation: loadingPortfolio 0.4s forwards;
+    animation-delay: 250ms;
+
+    &:hover {
+      height: 85%;
+    }
+
+    &--images {
+      @extend .portfolio-page--template;
+      background-image: url("../assets/wms.webp");
+      background-position: center center;
+      position: absolute;
+
+      @media only screen and (max-width: $bp-medium) {
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &--filter {
+      z-index: 999;
+      position: absolute;
+
+      @extend .portfolio-page--template-wh;
+
+      background-color: var(--color-primary);
+      opacity: 0.8;
+      transition: 0.2s ease-in-out;
+    }
+
+    &--layout {
+      @extend .portfolio-page--template__layout-wrapper;
+    }
+
+    &:hover &--layout {
+      transform: translate(0, 0);
+    }
+
+    &:hover &--filter {
+      opacity: 0.4;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    align-items: flex-end;
+
+    @media only screen and (max-width: $bp-large) {
+      height: 85%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      height: 100%;
+    }
+
+    &-5 {
+      @media only screen and (max-width: $bp-medium) {
+        grid-area: 3 / 1 / 4 / 3;
+      }
+    }
+  }
+}
+
+@keyframes loadingPortfolio {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
